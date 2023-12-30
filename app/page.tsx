@@ -11,7 +11,7 @@ When button is clicked, log it in side panel as a move made by the player
 
 export default function Gomoku() {
   return (
-    <main className="grid grid-cols-2 w-full h-full items-center justify-center m-32">
+    <main className="pt-10 w-screen h-screen items-center justify-center">
       <Board/>
     </main>
   );

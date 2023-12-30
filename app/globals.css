@@ -16,8 +16,8 @@
   }
 }
 
-board-row {
-  @apply my-0 h-10
+.board-row {
+  @apply my-0 h-6
 }
 
 body {

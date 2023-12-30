@@ -8,8 +8,24 @@
 //     [2,0,2,2,1,2,0]
 // ]
 
-// function checkWin(board: number[][]) 
+/**
+ * @param board 
+ * @param row 
+ * @param col 
+ * @param player 
+ * @returns True if the current player has a horizontal or vertical win in the specified column
+ */
+export default function checkWin(board: number[][], row: number, col: number, player: number) {
+    return hasHorizontalWin(board, row, player) || hasVerticalWin(board, col, player) || hasTopRightDiagonalWin(board, row, col, player) || hasTopLeftDiagonalWin(board, row, col, player);
+} 
 
+/**
+ * @param board 
+ * @param player 
+ * @param row 
+ * @param col 
+ * @returns True if the given player has five in a row in the given row
+ */
 function hasHorizontalWin(board: number[][], row: number, player: number): boolean {
     const n = board.length;
     const k = 5;
@@ -19,12 +35,14 @@ function hasHorizontalWin(board: number[][], row: number, player: number): boole
                 continue outer;
             }
         }
-        console.log("inside")
+        // console.log("inside")
         return true;
     }
-    console.log("outside")
+    // console.log("outside")
     return false;   
 }
+
+
 
 function hasVerticalWin(board: number[][], col: number, player: number): boolean {
     const n = board.length;
@@ -35,14 +53,14 @@ function hasVerticalWin(board: number[][], col: number, player: number): boolean
                 continue outer;
             }
         }
-        console.log("inside")
+        // console.log("inside")
         return true;
     }
-    console.log("outside")
+    // console.log("outside")
     return false;  
 }
 
-function hasTopRightDiagonalWin(board: number[][], player: number): boolean {
+function hasTopRightDiagonalWin(board: number[][], row: number, col: number, player: number): boolean {
     // const n = board.length;
     // const k = 5;
     // for (let i = 0; i < n - k + 1; i++) {
@@ -54,7 +72,7 @@ function hasTopRightDiagonalWin(board: number[][], player: number): boolean {
     return false;
 }
 
-function hasTopLeftDiagonalWin(board: number[][], player: number): boolean {
+function hasTopLeftDiagonalWin(board: number[][], row: number, col: number, player: number): boolean {
     return false;
 }
 
