@@ -30,7 +30,7 @@ export default function Board() {
 
   return (
     <div id='game-container' className="grid grid-cols-3 justify-center items-center text-center w-screen">
-      <RulesPanel/>
+      {/* <RulesPanel/> */}
       <div id='board' className={`w-[${BOARD_WIDTH}px] min-w-[${BOARD_WIDTH}px] h-[${BOARD_HEIGHT}px] min-h-[${BOARD_HEIGHT}px] gap-y-0`}>
       <div id='current-player-display' className="text-center left-0 right-0 m-auto">
         <h1 className="text-2xl font-bold">Gomoku</h1>
