@@ -23,7 +23,7 @@ export default function Board() {
   const [board, setBoard] = useState(defaultBoard())
   const [hasWinner, setHasWinner] = useState(false)
   const [winner, setWinner] = useState("")
-  const moves = moveList.map((move) => <p>{move}</p>)
+  // const moves = moveList.map((move) => <p>{move}</p>)
   // console.log(board)
   const BOARD_WIDTH  = 24*15
   const BOARD_HEIGHT = 24*15
@@ -293,9 +293,9 @@ export default function Board() {
             </div>
              <ButtonPanel updatePlayer={setPlayer} updateBoard={setBoard} updateWinner={setWinner} updateHasWinner={setHasWinner}/>
       </div>
-        <div className="w-fit bg-gray-50 border border-1 border-black max-h-44 overflow-y-auto left-0 right-0 m-auto">
+        {/* <div className="w-fit bg-gray-50 border border-1 border-black max-h-44 overflow-y-auto left-0 right-0 m-auto">
           {moves}
-        </div>
+        </div> */}
     </div>
   );
 }
