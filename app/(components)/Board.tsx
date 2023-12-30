@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Square from "./Square";
-import MovePanel from "./(panels)/MovePanel";
+// import MovePanel from "./(panels)/MovePanel";
 import ButtonPanel from "./(panels)/ButtonPanel";
-import { minWidth, width } from "@mui/system";
+// import { minWidth, width } from "@mui/system";
 import RulesPanel from "./(panels)/RulesPanel";
 
 function defaultBoard(): number[][] {
