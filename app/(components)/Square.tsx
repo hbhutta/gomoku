@@ -10,7 +10,6 @@ import checkWin from "@/utils/winCheckers";
 export default function Square(props: {rowId: number, columnId: number, currentPlayer: boolean, updatePlayer: any, currentMoveList: string[], updateMoveList: any, currentBoard: number[][], updateBoard: any, updateWinner: any, currentHasWinner: boolean, updateHasWinner: any}) {
   const [stone, setStone] = useState(<EmptyStone/>);
   const [empty, setEmpty] = useState(true)
-  const [moveNumber, setMoveNumber] = useState(0)
   return (
     <button
       disabled={props.currentHasWinner}
@@ -25,8 +24,10 @@ export default function Square(props: {rowId: number, columnId: number, currentP
             setStone(<WhiteStone/>);
             props.updatePlayer(false);
           }
-          setMoveNumber(moveNumber + 1)
-          const newMove: string = `${moveNumber}. ${props.currentPlayer ? "White" : "Black"} places stone at (${props.rowId}, ${props.columnId})`
+
+          setEmpty(!empty)
+
+          const newMove: string = `${props.currentPlayer ? "White" : "Black"} places stone at (${props.rowId}, ${props.columnId})`
           const moveList = props.currentMoveList
           moveList.push(newMove)
           props.updateMoveList(moveList)
