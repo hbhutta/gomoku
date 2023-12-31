@@ -291,7 +291,7 @@ export default function Board() {
               <Square rowId={14} columnId={13} currentPlayer={player} updatePlayer={setPlayer} currentMoveList={moveList} updateMoveList={setMoveList}  currentBoard={board} updateBoard={setBoard} currentHasWinner={hasWinner} updateWinner={setWinner} updateHasWinner={setHasWinner}/>
               <Square rowId={14} columnId={14} currentPlayer={player} updatePlayer={setPlayer} currentMoveList={moveList} updateMoveList={setMoveList}  currentBoard={board} updateBoard={setBoard} currentHasWinner={hasWinner} updateWinner={setWinner} updateHasWinner={setHasWinner}/>
             </div>
-             <ButtonPanel updatePlayer={setPlayer} updateBoard={setBoard} updateWinner={setWinner} updateHasWinner={setHasWinner}/>
+             {/* <ButtonPanel updatePlayer={setPlayer} updateBoard={setBoard} updateWinner={setWinner} updateHasWinner={setHasWinner}/> */}
       </div>
         {/* <div className="w-fit bg-gray-50 border border-1 border-black max-h-44 overflow-y-auto left-0 right-0 m-auto">
           {moves}
