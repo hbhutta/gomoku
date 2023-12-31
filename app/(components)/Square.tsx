@@ -4,8 +4,7 @@ import { useState } from "react";
 import BlackStone from "./(stones)/BlackStone";
 import WhiteStone from "./(stones)/WhiteStone";
 import EmptyStone from "./(stones)/EmptyStone";
-import checkWin from "@/utils/winCheckers";
-
+import checkWin from "@/utils/checkWin";
 
 export default function Square(props: {rowId: number, columnId: number, currentPlayer: boolean, updatePlayer: any, currentMoveList: string[], updateMoveList: any, currentBoard: number[][], updateBoard: any, updateWinner: any, currentHasWinner: boolean, updateHasWinner: any}) {
   const [stone, setStone] = useState(<EmptyStone/>);
