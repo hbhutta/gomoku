@@ -5,6 +5,35 @@ import BlackStone from "./(stones)/BlackStone";
 import WhiteStone from "./(stones)/WhiteStone";
 import EmptyStone from "./(stones)/EmptyStone";
 
+
+function hasTopRightDiagonal(board: number[][], player: number, row: number, col: number,): boolean {
+  const n = board.length;
+  const k = 5;
+  outer: for (let i = 0; i < n - k + 1; i++) {
+      inner: for (let j = i; j < i + k; j++) {
+          if (board[row + j][col + j] != player) {
+              continue outer;
+          }
+      }
+      return true;
+  }
+  return false; 
+}
+
+function hasTopLeftDiagonal(board: number[][], player: number, row: number, col: number): boolean {
+  const n = board.length;
+  const k = 5;
+  outer: for (let i = 0; i < n - k + 1; i++) {
+      inner: for (let j = i; j < i + k; j++) {
+          if (board[row - j][col - j] != player) {
+              continue outer;
+          }
+      }
+      return true;
+  }
+  return false; 
+}
+
 function hasVerticalWin(board: number[][], col: number, player: number): boolean {
   const n = board.length;
   const k = 5;
@@ -37,7 +66,7 @@ function hasHorizontalWin(board: number[][], row: number, player: number): boole
 
 
 function checkWin(board: number[][], row: number, column: number, player: number): boolean {
-  return hasHorizontalWin(board, row, player) || hasVerticalWin(board, column, player);
+  return hasHorizontalWin(board, row, player) || hasVerticalWin(board, column, player) || hasTopLeftDiagonal(board, player, row, column) || hasTopRightDiagonal(board, player, row, column);
 }
 
 export default function Square(props: {rowId: number, columnId: number, currentPlayer: boolean, updatePlayer: any, currentMoveList: string[], updateMoveList: any, currentBoard: number[][], updateBoard: any, updateWinner: any, currentHasWinner: boolean, updateHasWinner: any}) {
