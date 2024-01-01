@@ -1,1 +1,0 @@
-const hasVerticalWin = require('../winCheckers/')
